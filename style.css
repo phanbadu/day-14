@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,700&family=Roboto:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom, #d39ad3, #db8258);
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    height: 80%;
+    margin: 50px auto;
+}
+
+.main {
+    height: 80%;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgb(216 208 208);
+}
+
+.img-feature {
+    transition: 1s;
+    box-shadow: 0 0 10px 1px rgb(216, 208, 208);
+}
+
+.list-image {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-image div {
+    flex: 1;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    box-shadow: 0 0 10px 1px rgb(216, 208, 208);
+}
+
+.list-image .leftt {
+    margin-left: 0px;
+}
+
+.list-image .rightt {
+    margin-right: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.list-image div img:hover {
+    transform: scale(1.5);
+    transition: 0.2s;
+}
+
+.control {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 20px;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.next {
+    right: 20px;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.prev:hover ,
+.next:hover {
+    color: #ff0000;
+    transition: 0.3s;
+    font-size: 60px;
+}
+
+.prev:active ,
+.next:active {
+    color: #cc00ff;
+    transition: 0.3s;
+    font-size: 60px;
+}
+
+.active {
+    border-radius: 10px;
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0.8;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    } 
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0.8;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    } 
+}
+
+.button {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #8a4343, #8a8ae0);
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 4px #3f3e3e;
+}
+
+.button {
+    width: 170px;
+    font-size: 17px;
+    color: #fffafa;
+    text-decoration: none;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    padding: 0 50px;
+    z-index: 1;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+
+.button::after, .button::before {
+    content:'';
+    background: linear-gradient(to right, #fd4646, #37373f);
+    height: 50%;
+    width: 0;
+    position: absolute;
+    transition: 0.3s cubic-bezier(
+        .785, .135, .15, .86
+        );
+    -webkit-transition: 0.3s cubic-bezier(
+        785, .135, .15, .86
+        );
+    z-index: -1;
+}
+
+.button:hover::before {
+    width: 100%;
+    right: 0;
+    left: auto;
+}
+
+.button::before {
+    top: 0;
+    left: 0;
+    right: auto;
+}
+
+.button:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.button::after {
+    bottom: 0;
+    right: 0;
+    left: auto;
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding: 100px 20px 0 20px;
+    }
+    .button {
+        bottom: 10%;
+    }
+}
+
+@media (max-width: 768px) and (max-height: 1024px) {
+    .button {
+        bottom: 2%;
+    }
+}
+
+@media (max-width: 601px) {
+    body {
+        padding: 10px;
+    }
+    .button {
+        bottom: 2%;
+    }
+}
+
+@media (max-width: 375px) {
+    .button {
+        bottom: -1%;
+    }
+}
+
+@media (max-width: 321px) {
+    .button {
+        bottom: -3%;
+    }
+}
