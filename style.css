@@ -11,6 +11,7 @@
 body {
     height: 100vh;
     background: linear-gradient(to bottom, #d39ad3, #db8258);
+    position: relative;
 }
 
 .container {
@@ -136,7 +137,7 @@ img {
 
 .button {
     position: absolute;
-    bottom: 1%;
+    bottom: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
@@ -205,7 +206,7 @@ img {
         padding: 100px 20px 0 20px;
     }
     .button {
-        bottom: 10%;
+        bottom: 5%;
     }
 }
 
